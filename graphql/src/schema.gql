@@ -1,0 +1,55 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Heroe {
+  id: Int!
+  codigo: String!
+  nombre: String!
+  poderes: String!
+  detalle_del_vestuario: String!
+  porcentaje_de_habilidad: Int!
+  fecha_de_ultima_batalla: String!
+  empresa: String!
+  estado: String!
+  isDeleted: Boolean
+}
+
+type Query {
+  Heroes: [Heroe!]!
+  id_heroe(id: Int!): Heroe!
+  codigo_heroe(codigo: String!): Heroe!
+  porcentaje_de_habilidad: [Heroe!]!
+  porcentaje_de_habilidad_heroe(costo_aproximado: Int!): [Heroe!]!
+}
+
+type Mutation {
+  createHeroe(createHeroeInput: CreateHeroeDto!): Heroe!
+  updateHeroe(updateHeroeInput: UpdateHeroeInput!): Heroe!
+  softDeleteHeroe(id: Int!): Heroe!
+  hardDeleteHeroe(id: Int!): Heroe!
+}
+
+input CreateHeroeDto {
+  id: Int
+  codigo: String!
+  nombre: String!
+  poderes: String!
+  detalle_del_vestuario: String!
+  porcentaje_de_habilidad: Int!
+  fecha_de_ultima_batalla: String!
+  empresa: String!
+  estado: String!
+}
+
+input UpdateHeroeInput {
+  id: Int!
+  codigo: String
+  nombre: String
+  poderes: String
+  detalle_del_vestuario: String
+  porcentaje_de_habilidad: Int
+  fecha_de_ultima_batalla: String
+  empresa: String
+  estado: String
+}
